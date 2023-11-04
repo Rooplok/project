@@ -1,0 +1,119 @@
+/*global*/
+* {
+  color: #f3f6ff;
+  font-family: 'Montserrat';
+}
+
+QMainWindow {
+  background-color: #23243b;
+}
+
+QComboBox#module_txt,
+QPlainTextEdit#system_num_txt,
+QPlainTextEdit#station_num_txt,
+QPlainTextEdit#way_num_txt,
+QPlainTextEdit#way_num_txt_2,
+QPlainTextEdit#crate_num_txt,
+QPlainTextEdit#crate_place_txt,
+QPlainTextEdit#rec_code1_txt,
+QPlainTextEdit#rec_code2_txt,
+QPlainTextEdit#rec_code3_txt,
+QPlainTextEdit#rec_code4_txt,
+QLabel#crc32_txt {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+}
+
+/*Main*/
+QFrame#mianBlock {
+  border-radius: 20px;
+  padding: 3px;
+  background-color: #302e4b;
+}
+
+QLabel#titleFierst {
+  padding: 7px;
+}
+
+QComboBox#module_txt {
+  padding: 2px;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
+}
+
+QFrame#buttonsTop {
+  margin-bottom: 1px;
+}
+
+QPushButton#vrification,
+QPushButton#openingButton,
+QPushButton#saveButton {
+  padding: 7px;
+  border-radius: 10px;
+  background-color: #302e4b;
+}
+
+QFrame#buttonsBottom {
+  margin: 0;
+  border: 0;
+}
+
+QPushButton#vrification:focus,
+QPushButton#openingButton:focus,
+QPushButton#saveButton:focus {
+  outline: none;
+  background-color: #3f3d63;
+}
+
+QPushButton#vrification:hover,
+QPushButton#openingButton:hover,
+QPushButton#saveButton:hover {
+  background-color: #3f3d63;
+}
+
+QPushButton#vrification:pressed,
+QPushButton#openingButton:pressed,
+QPushButton#saveButton:pressed {
+  background-color: #3c3a56;
+}
+
+QScrollBar:vertical {
+  width: 10px;
+  background-color: #38354f;
+}
+
+QScrollBar::handle:vertical {
+  background: #cd0dc0;
+  min-height: 150px;
+  border-radius: 4px;
+  border: 0;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+  background: #38354f;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+  background-color: transparent;
+}
+
+QComboBox QAbstractItemView {
+  background-color: #38354f;
+  border: 0;
+}
+
+QComboBox QAbstractItemView::item {
+  background: transparent;
+  border: none;
+  height: 24px;
+  /*margin-bottom: 1px; !*если добавить маржин, то можно увидеть, что появляется пунктир*!*/
+  border: -1px solid red; /*фиксит точки при наведении, P.S фиксит ужиманием блоков ╮(￣_￣)╭*/
+}
+
+QComboBox QAbstractItemView::item:hover {
+  color: #aba8ff;
+  background-color: #3f3d63;
+}
