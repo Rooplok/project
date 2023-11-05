@@ -1,0 +1,59 @@
+/*global*/
+* {
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 12px;
+}
+
+QMainWindow {
+  background-color: #d9dce1;
+}
+
+/*mainBlock*/
+QWidget#mainBlock {
+  border-radius: 20px;
+  background-color: #005c91;
+}
+
+QPlainTextEdit#shiftAddress_txt,
+QPlainTextEdit#recordSize_txt {
+  background-color: transparent;
+  selection-background-color: rgba(227, 232, 238, 0.15);
+  border: 0;
+  border-bottom: 1px solid #fff;
+}
+
+/*allButtons*/
+QPushButton {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #005c91;
+  /*transition: background-color 3s ease-in-out;*/ /*PyQt6 не поддерживает такую анимацию (ಥ﹏ಥ)*/
+}
+
+QPushButton:focus {
+  outline: none;
+  border: 2px solid #69b7e5;
+}
+
+QPushButton:hover {
+  font-weight: 600;
+  color: #69b7e5;
+}
+
+QPushButton:pressed {
+  background-color: #317aa4;
+  outline: none;
+  border: none;
+}
+
+QLabel#FIRMWAREVersion {
+  color: #1b1e21;
+}
+
+/*footer*/
+QLabel#operationStatus,
+QLabel#GUIVersion {
+  color: #1b1e21;
+}
