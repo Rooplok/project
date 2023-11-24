@@ -1,4 +1,4 @@
-# test tag - v1.0.0
+# test tag - v1.0.1
 # verification - название объекта QPushButton - 'Верефикация'
 # openingButton - название объекта QPushButton - 'Открыть...'
 # saveButton - название объекта QPushButton - 'Сохранить'
