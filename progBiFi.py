@@ -24,7 +24,7 @@
 # operationStatus - объект QLabel - для отображения статуса операции 'СТАТУС'
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+import git
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -175,7 +175,7 @@ class Ui_MainWindow(object):
         spacerItem4 = QtWidgets.QSpacerItem(70, 20, QtWidgets.QSizePolicy.Policy.MinimumExpanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.executiveButtons.addItem(spacerItem4)
         self.verticalLayout.addLayout(self.executiveButtons)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 171, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.MinimumExpanding)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 35, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.MinimumExpanding)
         self.verticalLayout.addItem(spacerItem5)
         self.footer = QtWidgets.QHBoxLayout()
         self.footer.setObjectName("footer")
@@ -223,14 +223,24 @@ class Ui_MainWindow(object):
         self.buttonRESWP.setText(_translate("MainWindow", "RESWP"))
         self.buttonSETWP.setText(_translate("MainWindow", "SETWP"))
         self.operationStatus.setText(_translate("MainWindow", "СТАТУС"))
-        self.GUIVersion.setText(_translate("MainWindow", "GUI version 0.0"))
+        self.GUIVersion.setText(_translate("MainWindow", f"FIRMWARE {version()}"))
 
+def version():
+    g = git.cmd.Git()
+    blob = g.ls_remote('https://github.com/Rooplok/project', sort='-v:refname', tags=True)
+    return blob.split('\n')[0].split('/')[-1]
 
-if __name__ == "__main__":
+def checkVersion():
+    newText = version()
+    ui.GUIVersion.setText(f"FIRMWARE {newText}")
+    return
+
+if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
+    ui.buttonReadVersion.clicked.connect(checkVersion)
     sys.exit(app.exec())

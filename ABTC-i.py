@@ -1,4 +1,4 @@
-# test tag - v1.0.1
+# test tag -  v1.0.1
 # verification - название объекта QPushButton - 'Верефикация'
 # openingButton - название объекта QPushButton - 'Открыть...'
 # saveButton - название объекта QPushButton - 'Сохранить'
@@ -19,7 +19,7 @@
 # FIRMWAREVersion - название объекта QLabel - 'FIRMWARE version 0.0'
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+import git
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -485,9 +485,13 @@ class Ui_MainWindow(object):
         self.openingButton.setText(_translate("MainWindow", "Открыть..."))
         self.saveButton.setText(_translate("MainWindow", "Сохранить"))
         self.operationStatus.setText(_translate("MainWindow", "Статус операции:.."))
-        self.GUIVersion.setText(_translate("MainWindow", "GUI version 0.0"))
-        self.FIRMWAREVersion.setText(_translate("MainWindow", "FIRMWARE version 0.0"))
+        self.GUIVersion.setText(_translate("MainWindow", f"GUI {version()}"))
+        self.FIRMWAREVersion.setText(_translate("MainWindow", f"FIRMWARE {version()}"))
 
+def version():
+    g = git.cmd.Git()
+    blob = g.ls_remote('https://github.com/Rooplok/project', sort='-v:refname', tags=True)
+    return blob.split('\n')[0].split('/')[-1]
 
 if __name__ == "__main__":
     import sys
