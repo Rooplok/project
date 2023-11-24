@@ -1,4 +1,4 @@
-# test tag -  v1.0.0
+# test tag -  v1.0.1
 # titleSecond - объект QLabel - главный заголовок 'Программирование бинарного файла'
 # shiftAddress - объект QLabel - просто подпись 'Адрес сдвига'
 # recordSize - объект QLabel - просто подпись 'Размер записи/считывания'
@@ -224,15 +224,22 @@ class Ui_MainWindow(object):
         self.buttonRESWP.setText(_translate("MainWindow", "RESWP"))
         self.buttonSETWP.setText(_translate("MainWindow", "SETWP"))
         self.operationStatus.setText(_translate("MainWindow", "СТАТУС"))
-        self.GUIVersion.setText(_translate("MainWindow", f"FIRMWARE {version()}"))
+        self.GUIVersion.setText(_translate("MainWindow", f"FIRMWARE {version('F')}"))
 
-def version():
+def version(type):
     g = git.cmd.Git()
     blob = g.ls_remote('https://github.com/Rooplok/project', sort='-v:refname', tags=True)
-    return blob.split('\n')[0].split('/')[-1]
+    list_versions = blob.split('\n')
+    list_clear_versions = []
+    for version in list_versions:
+        list_clear_versions.append(version.split('/')[-1])
+
+    for version in list_clear_versions:
+        if version[-1] == type:
+            return(version[:-1])
 
 def checkVersion():
-    newText = version()
+    newText = version('F')
     ui.GUIVersion.setText(f"FIRMWARE {newText}")
     return
 
