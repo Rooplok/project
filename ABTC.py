@@ -1,4 +1,4 @@
-# test tag -  v1.0.3
+# test tag -  v1.0.4
 # verification - название объекта QPushButton - 'Верефикация'
 # openingButton - название объекта QPushButton - 'Открыть...'
 # saveButton - название объекта QPushButton - 'Сохранить'
@@ -20,6 +20,7 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 import git
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -336,16 +337,16 @@ class Ui_MainWindow(object):
         self.buttonsTop.setObjectName("buttonsTop")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.buttonsTop)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.vrification = QtWidgets.QPushButton(parent=self.buttonsTop)
+        self.verification = QtWidgets.QPushButton(parent=self.buttonsTop)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(40)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.vrification.sizePolicy().hasHeightForWidth())
-        self.vrification.setSizePolicy(sizePolicy)
-        self.vrification.setMinimumSize(QtCore.QSize(95, 0))
-        self.vrification.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.vrification.setObjectName("vrification")
-        self.verticalLayout.addWidget(self.vrification)
+        sizePolicy.setHeightForWidth(self.verification.sizePolicy().hasHeightForWidth())
+        self.verification.setSizePolicy(sizePolicy)
+        self.verification.setMinimumSize(QtCore.QSize(95, 0))
+        self.verification.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.verification.setObjectName("verification")
+        self.verticalLayout.addWidget(self.verification)
         self.verticalLayout_2.addWidget(self.buttonsTop)
         self.buttonsBottom = QtWidgets.QFrame(parent=self.buttons)
         self.buttonsBottom.setObjectName("buttonsBottom")
@@ -481,7 +482,7 @@ class Ui_MainWindow(object):
         self.rec_code4.setText(_translate("MainWindow", "Индивидуальная информация"))
         self.crc32.setText(_translate("MainWindow", "Контрольная сумма"))
         self.rec_code4_txt.setPlaceholderText(_translate("MainWindow", "до 255"))
-        self.vrification.setText(_translate("MainWindow", "Верефикация"))
+        self.verification.setText(_translate("MainWindow", "Верефикация"))
         self.openingButton.setText(_translate("MainWindow", "Открыть..."))
         self.saveButton.setText(_translate("MainWindow", "Сохранить"))
         self.operationStatus.setText(_translate("MainWindow", "Статус операции:.."))

@@ -31,6 +31,10 @@ QPushButton {
   background-color: #005c91;
   /*transition: background-color 3s ease-in-out;*/ /*PyQt6 не поддерживает такую анимацию (ಥ﹏ಥ)*/
 }
+QPushButton#buttonGET1 {
+  background-color: #317aa4;
+  color: #69b7e5;
+}
 
 QPushButton:focus {
   outline: none;

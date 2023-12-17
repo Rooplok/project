@@ -49,7 +49,7 @@ QFrame#buttonsTop {
   margin-bottom: 1px;
 }
 
-QPushButton#vrification,
+QPushButton#verification,
 QPushButton#openingButton,
 QPushButton#saveButton {
   position: relative;
@@ -64,21 +64,21 @@ QFrame#buttonsBottom {
   border: 0;
 }
 
-QPushButton#vrification:focus,
+QPushButton#verification:focus,
 QPushButton#openingButton:focus,
 QPushButton#saveButton:focus {
   outline: none;
   border: 2px solid #69b7e5;
 }
 
-QPushButton#vrification:hover,
+QPushButton#verification:hover,
 QPushButton#openingButton:hover,
 QPushButton#saveButton:hover {
   font-weight: 600;
   color: #69b7e5;
 }
 
-QPushButton#vrification:pressed,
+QPushButton#verification:pressed,
 QPushButton#openingButton:pressed,
 QPushButton#saveButton:pressed {
   background-color: #317aa4;
